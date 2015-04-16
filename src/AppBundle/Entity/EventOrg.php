@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Class EventOrg
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\EventOrgRepository")
  * @ORM\Table(name="ev_org")
  *
  * @author Yuri Svatok <svatok13@gmail.com>

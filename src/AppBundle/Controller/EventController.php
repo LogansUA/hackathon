@@ -54,4 +54,28 @@ class EventController extends Controller
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @param int $id ID
+     *
+     * @return Response
+     *
+     * @Route("/event/{id}/details", name="event_details")
+     */
+    public function eventDetails($id)
+    {
+        $eventRepository = $this->getDoctrine()->getRepository('AppBundle:Event');
+        $event = $eventRepository->findEventById($id);
+
+        if(!$event)
+            throw $this->createNotFoundException('Event not found!!');
+
+        $evorgRepository = $this->getDoctrine()->getRepository('AppBundle:EventOrg');
+        $organizer = $evorgRepository->getOrganizer($event);
+
+        return $this->render('frontend/event_details.html.twig', [
+            'event' => $event,
+            'organizer' => $organizer,
+        ]);
+    }
 }
