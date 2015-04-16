@@ -21,6 +21,7 @@ class EventOrgRepository extends EntityRepository
         $qb
             ->join('e.organizer', 'o')
             ->select('o.name AS orgName')
+            ->addSelect('o.id')
             ->where($qb->expr()->eq('e.event', ':event'))
             ->setParameter('event', $event->getId());
 
