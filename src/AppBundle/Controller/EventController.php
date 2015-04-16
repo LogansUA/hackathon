@@ -33,6 +33,8 @@ class EventController extends Controller
      */
     public function createEventAction(Request $request)
     {
+        $event = new Event();
+
         $form = $this->createForm(new EventType());
         $form->handleRequest($request);
 
@@ -43,7 +45,9 @@ class EventController extends Controller
             $em->persist($eventData);
             $em->flush();
 
-            $this->get('session')->getFlashBag()->add('notice', 'Your event was added!');
+//            $this->get('session')->getFlashBag()->add('notice', 'Your event was added!');
+
+            return $this->redirect($this->generateUrl('homepage'));
         }
 
         return $this->render('frontend/create_event.html.twig', [

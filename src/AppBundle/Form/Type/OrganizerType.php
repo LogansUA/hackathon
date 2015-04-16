@@ -7,11 +7,11 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
- * EventType
+ * OrganizerType
  *
  * @author Oleg Kachinsky <logansoleg@gmail.com>
  */
-class EventType extends AbstractType
+class OrganizerType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -20,11 +20,10 @@ class EventType extends AbstractType
     {
         $builder
             ->add('name', 'text')
-            ->add('latitude', 'text')
-            ->add('longitude', 'text')
             ->add('description', 'textarea')
-            ->add('price', 'text')
-            ->add('datetime', 'datetime')
+            ->add('phone', 'text')
+            ->add('email', 'email')
+            ->add('address', 'text')
             ->add('submit', 'submit');
     }
 
@@ -34,7 +33,7 @@ class EventType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => 'AppBundle\Entity\Event'
+            'data_class' => 'AppBundle\Entity\Organizer'
         ]);
     }
 
@@ -43,6 +42,6 @@ class EventType extends AbstractType
      */
     public function getName()
     {
-        return 'event_type';
+        return 'organizer_type';
     }
 }

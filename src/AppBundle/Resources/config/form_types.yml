@@ -2,4 +2,9 @@ services:
     app.form.type.event:
         class: AppBundle\Form\Type\EventType
         type:
-            - { name: form.type, alias: event }
+            - { name: form.type, alias: event_type }
+
+    app.form.type.organizer:
+        class: AppBundle\Form\Type\OrganizerType
+        type:
+            - { name: form.type, alias: organizer_type }
