@@ -21,11 +21,6 @@ class Event {
     /**
      * @var
      */
-    private $organizer;
-
-    /**
-     * @var
-     */
     private $description;
 
     /**
@@ -87,26 +82,6 @@ class Event {
     public function setName($name)
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getOrganizer()
-    {
-        return $this->organizer;
-    }
-
-    /**
-     * @param mixed $organizer
-     *
-     * @return $this
-     */
-    public function setOrganizer($organizer)
-    {
-        $this->organizer = $organizer;
 
         return $this;
     }
