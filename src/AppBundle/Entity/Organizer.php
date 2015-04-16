@@ -111,7 +111,7 @@ class Organizer
     public function setEvorgs(Collection $evorgs)
     {
         foreach ($evorgs as $evorg) {
-            $evorg->setEvent($this);
+            $evorg->setOrganizer($this);
         }
         $this->evorgs = $evorgs;
 

@@ -38,7 +38,7 @@ class EventOrg
     /**
      * @var Organizer $organizer
      *
-     * @ORM\ManyToOne(targetEntity="Event", inversedBy="evorgs")
+     * @ORM\ManyToOne(targetEntity="Organizer", inversedBy="evorgs")
      * @ORM\JoinColumn(name="organizer", referencedColumnName="id")
      *
      * @Assert\NotBlank()
