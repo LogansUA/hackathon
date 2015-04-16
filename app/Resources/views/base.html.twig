@@ -9,5 +9,25 @@
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+
+        <footer>
+            {% block footer %}
+                <div>
+                    <div>
+                        <p>
+                            Developed by Svatku Team.
+                            Code released under the <a href="https://github.com/LogansUA/hackathon/blob/develop/LICENSE">MIT License</a>.
+                        </p>
+                        <p>
+                            Based on <a href="http://bootswatch.com/" rel="nofollow">Twitter Bootstrap</a>.
+                        </p>
+                        <p>
+                            Powered by
+                            <a href="http://symfony.com/">Symfony</a>
+                        </p>
+                    </div>
+                </div>
+            {% endblock footer %}
+        </footer>
     </body>
 </html>
