@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Class Organizer
  *
- * @ORM\Entity
- * @ORM\Table(name="event")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\OrganizerRepository")
+ * @ORM\Table(name="organizer")
  *
  * @author Oleg Kachinsky <logansoleg@gmail.com>
  */

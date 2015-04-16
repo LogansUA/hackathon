@@ -1,23 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: myrkotyn
- * Date: 16.04.15
- * Time: 9:23
- */
 
 namespace AppBundle\Entity;
 
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * Class Event
+ *
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\EventRepository")
  * @ORM\Table(name="event")
  */
-class Event {
-
+class Event
+{
     /**
+     * @var int $id ID
+     *
      * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -25,52 +22,59 @@ class Event {
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @var string $name Name
+     *
+     * @ORM\Column(type="string")
      */
     private $name;
 
     /**
-     * @ORM\Column(type="text")
+     * @var string $description Description
+     *
+     * @ORM\Column(type="string")
      */
     private $description;
 
     /**
-     * @ORM\Column(type="date")
+     * @var DateTime $datetime DateTime
+     *
+     * @ORM\Column(type="datetime")
      */
     private $datetime;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var float $latitude Latitude
+     *
+     * @ORM\Column(type="decimal", precision=18, scale=15, nullable=true)
      */
     private $latitude;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var float $longitude Longitude
+     *
+     * @ORM\Column(type="decimal", precision=18, scale=15, nullable=true)
      */
     private $longitude;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $length;
 
     /**
+     * @var int $price Price
+     *
      * @ORM\Column(type="integer")
      */
     private $price;
 
     /**
+     * @var boolean $isFree IsFree
+     *
      * @ORM\Column(type="boolean")
      */
-    private $isFree;
+    private $isFree = true;
 
     /**
-     * @ORM\Column(type="text")
-     */
-    private $logo;
-
-    /**
-     * @return mixed
+     * Get id
+     *
+     * @return int Id
      */
     public function getId()
     {
@@ -78,7 +82,9 @@ class Event {
     }
 
     /**
-     * @return mixed
+     * Get name
+     *
+     * @return string Name
      */
     public function getName()
     {
@@ -86,7 +92,9 @@ class Event {
     }
 
     /**
-     * @param mixed $name
+     * Set name
+     *
+     * @param string $name name
      *
      * @return $this
      */
@@ -98,7 +106,9 @@ class Event {
     }
 
     /**
-     * @return mixed
+     * Get description
+     *
+     * @return string Description
      */
     public function getDescription()
     {
@@ -106,7 +116,9 @@ class Event {
     }
 
     /**
-     * @param mixed $description
+     * Set description
+     *
+     * @param string $description description
      *
      * @return $this
      */
@@ -118,7 +130,9 @@ class Event {
     }
 
     /**
-     * @return mixed
+     * Get datetime
+     *
+     * @return DateTime Datetime
      */
     public function getDatetime()
     {
@@ -126,7 +140,9 @@ class Event {
     }
 
     /**
-     * @param mixed $datetime
+     * Set datetime
+     *
+     * @param DateTime $datetime datetime
      *
      * @return $this
      */
@@ -138,7 +154,9 @@ class Event {
     }
 
     /**
-     * @return mixed
+     * Get latitude
+     *
+     * @return float Latitude
      */
     public function getLatitude()
     {
@@ -146,7 +164,9 @@ class Event {
     }
 
     /**
-     * @param mixed $latitude
+     * Set latitude
+     *
+     * @param float $latitude latitude
      *
      * @return $this
      */
@@ -158,7 +178,9 @@ class Event {
     }
 
     /**
-     * @return mixed
+     * Get longitude
+     *
+     * @return float Longitude
      */
     public function getLongitude()
     {
@@ -166,7 +188,9 @@ class Event {
     }
 
     /**
-     * @param mixed $longitude
+     * Set longitude
+     *
+     * @param float $longitude longitude
      *
      * @return $this
      */
@@ -178,27 +202,9 @@ class Event {
     }
 
     /**
-     * @return mixed
-     */
-    public function getLength()
-    {
-        return $this->length;
-    }
-
-    /**
-     * @param mixed $length
+     * Get price
      *
-     * @return $this
-     */
-    public function setLength($length)
-    {
-        $this->length = $length;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
+     * @return int Price
      */
     public function getPrice()
     {
@@ -206,7 +212,9 @@ class Event {
     }
 
     /**
-     * @param mixed $price
+     * Set price
+     *
+     * @param int $price price
      *
      * @return $this
      */
@@ -218,15 +226,19 @@ class Event {
     }
 
     /**
-     * @return mixed
+     * Get isFree
+     *
+     * @return boolean IsFree
      */
-    public function getIsFree()
+    public function isIsFree()
     {
         return $this->isFree;
     }
 
     /**
-     * @param mixed $isFree
+     * Set isFree
+     *
+     * @param boolean $isFree isFree
      *
      * @return $this
      */
@@ -236,26 +248,5 @@ class Event {
 
         return $this;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getLogo()
-    {
-        return $this->logo;
-    }
-
-    /**
-     * @param mixed $logo
-     *
-     * @return $this
-     */
-    public function setLogo($logo)
-    {
-        $this->logo = $logo;
-
-        return $this;
-    }
-
 
 }
