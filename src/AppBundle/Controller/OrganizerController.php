@@ -29,20 +29,18 @@ class OrganizerController extends Controller
      *
      * @return Response
      *
-     * @Route("/organizer/create", name="event_create")
+     * @Route("/organizer/create", name="organizer_create")
      */
-    public function createEventAction(Request $request)
+    public function createOrganizerAction(Request $request)
     {
         $organizer = new Organizer();
 
-        $form = $this->createForm(new OrganizerType());
+        $form = $this->createForm('organizer', $organizer);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $organizerData = $form->getData();
-
             $em = $this->getDoctrine()->getManager();
-            $em->persist($organizerData);
+            $em->persist($organizer);
             $em->flush();
 
 //            $this->get('session')->getFlashBag()->add('notice', 'Your organizer was added!');

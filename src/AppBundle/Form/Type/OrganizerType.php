@@ -42,6 +42,6 @@ class OrganizerType extends AbstractType
      */
     public function getName()
     {
-        return 'organizer_type';
+        return 'organizer';
     }
 }
