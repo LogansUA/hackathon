@@ -2,7 +2,22 @@ body {
     width: 100%;
 }
 .custom-footer {
+    width: 100%;
     position: fixed;
     left: 0; bottom: 0;
     padding: 10px;
+}
+.div-for-image {
+    background-image: url("../events.png");
+    background-position: center;
+    background-size: cover;
+    float: left;
+    width: 150px;
+    height: 120px;
+    margin-left: 20%;
+}
+.table-header {
+    float: right;
+    width: 200px;
+    height: 100px;
 }

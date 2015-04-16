@@ -19,13 +19,41 @@ class EventType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', 'text')
-            ->add('latitude', 'text')
-            ->add('longitude', 'text')
-            ->add('description', 'textarea')
-            ->add('price', 'text')
-            ->add('datetime', 'datetime')
-            ->add('submit', 'submit');
+            ->add('name', 'text',[
+                    'attr' => [
+                        'class' => 'form-control'
+                    ]
+                ])
+            ->add('latitude', 'text',[
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('longitude', 'text',[
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('description', 'textarea',[
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('price', 'text',[
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('datetime', 'datetime',[
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('submit', 'submit',[
+                'attr' => [
+                    'class' => 'btn-success'
+                ]
+            ]);
     }
 
     /**
