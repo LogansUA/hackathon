@@ -56,7 +56,7 @@ class EventAdmin extends Admin
             ->add('latitude')
             ->add('longitude')
             ->add('price')
-            ->add('isFree');
+            ->add('free');
     }
 
     /**
@@ -71,7 +71,7 @@ class EventAdmin extends Admin
             ->add('latitude')
             ->add('longitude')
             ->add('price')
-            ->add('isFree');
+            ->add('free');
     }
 
     /**
@@ -87,7 +87,7 @@ class EventAdmin extends Admin
             ->add('latitude')
             ->add('longitude')
             ->add('price')
-            ->add('isFree');
+            ->add('free');
     }
 
     /**
@@ -102,6 +102,6 @@ class EventAdmin extends Admin
             ->add('latitude')
             ->add('longitude')
             ->add('price')
-            ->add('isFree');
+            ->add('free');
     }
 }
