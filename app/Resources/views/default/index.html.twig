@@ -2,4 +2,30 @@
 
 {% block body %}
     Homepage.
+
+    <table>
+        <caption>Events of Khmelnytskyi city</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Datetime</th>
+                <th>price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in event_list %}
+                <tr>
+                    <td>{{ event.name }}</td>
+                    <td>{{ event.datetime|date("d/m/Y H:m") }}</td>
+                    <td>
+                        {% if event.price is not empty %}
+                            {{ event.price }}
+                        {% else %}
+                            Безкоштовно
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

@@ -29,7 +29,7 @@ class OrganizerController extends Controller
      *
      * @return Response
      *
-     * @Route("/organizer/create", name="event_create")
+     * @Route("/organizer/create", name="organizer_create")
      */
     public function createEventAction(Request $request)
     {

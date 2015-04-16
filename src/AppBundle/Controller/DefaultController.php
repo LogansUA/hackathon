@@ -12,6 +12,11 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('default/index.html.twig');
+        $eventRepository = $this->getDoctrine()->getRepository('AppBundle:Event');
+        $eventList = $eventRepository->getAllEvents();
+
+        return $this->render('default/index.html.twig', [
+            'event_list' => $eventList,
+        ]);
     }
 }
