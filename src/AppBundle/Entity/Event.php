@@ -6,55 +6,66 @@
  * Time: 9:23
  */
 
+namespace AppBundle\Entity;
+
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="event")
+ */
 class Event {
 
     /**
-     * @var
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @var
+     * @ORM\Column(type="string", length=100)
      */
     private $name;
 
     /**
-     * @var
+     * @ORM\Column(type="text")
      */
     private $description;
 
     /**
-     * @var
+     * @ORM\Column(type="date")
      */
     private $datetime;
 
     /**
-     * @var
+     * @ORM\Column(type="integer")
      */
     private $latitude;
 
     /**
-     * @var
+     * @ORM\Column(type="integer")
      */
     private $longitude;
 
     /**
-     * @var
+     * @ORM\Column(type="integer")
      */
     private $length;
 
     /**
-     * @var
+     * @ORM\Column(type="integer")
      */
     private $price;
 
     /**
-     * @var
+     * @ORM\Column(type="boolean")
      */
     private $isFree;
 
     /**
-     * @var
+     * @ORM\Column(type="text")
      */
     private $logo;
 
