@@ -15,6 +15,7 @@ class LoadOrganizerData extends AbstractFixture {
             ->setDescription('Тренер з американського футболу')
             ->setAddress('Прибузька 46')
             ->setPhone('+38096887975');
+        $this->setReference('coach', $coach);
 
         $manager->persist($coach);
 
@@ -22,6 +23,7 @@ class LoadOrganizerData extends AbstractFixture {
             ->setName('Петрик Танцюрист')
             ->setDescription('Петрик, який любить танці')
             ->setPhone('+380978643126');
+        $this->setReference('dance', $dance);
 
         $manager->persist($dance);
 

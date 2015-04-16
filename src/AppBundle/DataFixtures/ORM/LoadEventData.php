@@ -19,6 +19,7 @@ class LoadEventData extends AbstractFixture
             ->setLatitude(49.437764)
             ->setLongitude(27.005755)
             ->setPrice(10);
+        $this->setReference('tanci', $tanci);
 
         $manager->persist($tanci);
 
@@ -29,6 +30,7 @@ class LoadEventData extends AbstractFixture
             ->setIsFree(true)
             ->setLatitude(50.437764)
             ->setLongitude(25.005755);
+        $this->setReference('amFoot', $amFoot);
 
         $manager->persist($amFoot);
 
@@ -40,6 +42,7 @@ class LoadEventData extends AbstractFixture
             ->setLatitude(49.995672)
             ->setLongitude(25.679134)
             ->setPrice(50);
+        $this->setReference('dvij', $dvij);
 
         $manager->persist($dvij);
 

@@ -3,6 +3,9 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class Organizer
@@ -11,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="organizer")
  *
  * @author Oleg Kachinsky <logansoleg@gmail.com>
+ * @author Yuri Svatok <svatok13@gmail.com>
  */
 class Organizer
 {
@@ -58,6 +62,62 @@ class Organizer
      * @ORM\Column(type="string", nullable=true)
      */
     private $address;
+
+    /**
+     * @var Collection|EventOrg[] $evorgs
+     *
+     * @ORM\OneToMany(targetEntity="EventOrg", mappedBy="organizer", cascade={"persist", "remove"}, orphanRemoval=true)
+     * @ORM\JoinColumn(onDelete="CASCADE")
+     *
+     * @Assert\Type(type="object")
+     */
+    private $evorgs;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->evorgs = new ArrayCollection();
+    }
+
+    /**
+     * To string
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName() ?: 'New Oranizer';
+    }
+
+    /**
+     * Get evorgs
+     *
+     * @return EventOrg[]|Collection Evorgs
+     */
+    public function getEvorgs()
+    {
+        return $this->evorgs;
+    }
+
+    /**
+     * Set evorgs
+     *
+     * @param EventOrg[]|Collection $evorgs evorgs
+     *
+     * @return $this
+     */
+    public function setEvorgs(Collection $evorgs)
+    {
+        foreach ($evorgs as $evorg) {
+            $evorg->setEvent($this);
+        }
+        $this->evorgs = $evorgs;
+
+        return $this;
+    }
+
 
     /**
      * Get id
