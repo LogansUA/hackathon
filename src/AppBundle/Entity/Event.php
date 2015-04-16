@@ -38,7 +38,7 @@ class Event
     /**
      * @var DateTime $datetime DateTime
      *
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $datetime;
 
@@ -59,7 +59,7 @@ class Event
     /**
      * @var int $price Price
      *
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $price;
 
