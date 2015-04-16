@@ -50,8 +50,30 @@ class OrganizerController extends Controller
             return $this->redirect($this->generateUrl('homepage'));
         }
 
-        return $this->render('frontend/create_event.html.twig', [
+        return $this->render('frontend/create_organizer.html.twig', [
             'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @param         $id
+     * @param Request $request
+     *
+     * @return Response
+     *
+     * @Route("/organizer/{id}/details", name="organizer_details")
+     */
+    public function showOrganizerAction($id, Request $request)
+    {
+        $organizerRepository = $this->getDoctrine()->getRepository('AppBundle:Organizer');
+        $organizer           = $organizerRepository->getOrganizerById($id);
+
+        if (!$organizer) {
+            throw $this->createNotFoundException('Organizer not found.');
+        }
+
+        return $this->render('frontend/show_organizer_details.html.twig', [
+            'organizer' => $organizer,
         ]);
     }
 }

@@ -19,12 +19,36 @@ class OrganizerType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', 'text')
-            ->add('description', 'textarea')
-            ->add('phone', 'text')
-            ->add('email', 'email')
-            ->add('address', 'text')
-            ->add('submit', 'submit');
+            ->add('name', 'text', [
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('description', 'textarea', [
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('phone', 'text', [
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('email', 'email', [
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('address', 'text', [
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('submit', 'submit', [
+                'attr' => [
+                    'class' => 'btn btn-success',
+                ]
+            ]);
     }
 
     /**

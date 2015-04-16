@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div style="margin-right: 20%; margin-left: 20%;">
+        <h5 align="center">This is the Organizer create form.</h5>
+
+        {{ form_start(form) }}
+        <h5>{{ form_row(form.name) }}</h5>
+        <h5>{{ form_row(form.description) }}</h5>
+        <h5>{{ form_row(form.phone) }}</h5>
+        <h5>{{ form_row(form.email) }}</h5>
+        <h5>{{ form_row(form.address) }}</h5>
+        {{ form_row(form.submit) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

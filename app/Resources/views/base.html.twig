@@ -11,9 +11,23 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}
+        <header>
+            <div class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a href="{{ url('homepage') }}" class="navbar-brand">KhmEvents</a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li><a href="{{ url('event_create') }}">Create Event</a></li>
+                            <li><a href="{{ url('organizer_create') }}">Create Organizer</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-        <hr />
+        {% block body %}
 
         {% endblock body %}
 

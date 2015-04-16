@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div>
+        {#<div style="float: left; padding: 0" >#}
+            {#<img src="{{ asset('images/1389952697.png') }}" width="30%" />#}
+        {#</div>#}
+
+        <div>
+            <ul style="list-style-type: none; ">
+                <li>
+                    <h5>Name</h5>
+
+                    <p>{{ organizer.name }}</p>
+                    <hr />
+                </li>
+                <li>
+                    <h5>Description</h5>
+                    <p>{{ organizer.description }}</p>
+                    <hr />
+                </li>
+                <li>
+                    <h5>Phone</h5>
+                    <p>{{ organizer.phone }}</p>
+                    <hr />
+                </li>
+                <li>
+                    <h5>Email</h5>
+                    <p>
+                        {% if organizer.email is not empty %}
+                            {{ organizer.email }}
+                        {% else %}
+                            Not defined
+                        {% endif %}
+                    </p>
+                    <hr />
+                </li>
+                <li>
+                    <h5>Address</h5>
+                    <p>
+                        {% if organizer.address is not empty %}
+                            {{ organizer.address }}
+                        {% else %}
+                            Not defined
+                        {% endif %}
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

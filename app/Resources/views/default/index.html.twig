@@ -1,22 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <header>
-        <div class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a href="#" class="navbar-brand">KhmEvents</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li><a href="{{ url('event_create') }}">Create Event</a></li>
-                        <li><a href="{{ url('organizer_create') }}">Create Organizer</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <p class="table-header"><h3 align="center">Events of Khmelnytskyi city</h3></p>
 
     <table class="table table-hover">
@@ -30,7 +14,7 @@
         <tbody>
             {% for event in event_list %}
                 <tr>
-                    <td>{{ event.name }}</td>
+                    <td><a href="http://khmelnytskyi-events.work/app_dev.php/event/{{ event.id }}/details">{{ event.name }}</a></td>
                     <td>{{ event.datetime|date("d/m/Y H:m") }}</td>
                     <td>
                         {% if event.price is not empty %}

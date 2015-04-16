@@ -24,6 +24,7 @@ class EventRepository extends EntityRepository
 
         $qb
             ->select('e.name')
+            ->addSelect('e.id')
             ->addSelect('e.datetime')
             ->addSelect('e.price')
             ->setFirstResult($offset);

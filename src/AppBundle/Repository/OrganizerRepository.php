@@ -30,4 +30,19 @@ class OrganizerRepository extends EntityRepository
 
         return $qb->getQuery()->getArrayResult();
     }
+
+    /**
+     * @param integer $id
+     *
+     * @return array
+     */
+    public function getOrganizerById($id)
+    {
+        $qb = $this->createQueryBuilder('o');
+
+        $qb
+            ->where($qb->expr()->eq('o.id', $id));
+
+        return $qb->getQuery()->getOneOrNullResult();
+    }
 }
