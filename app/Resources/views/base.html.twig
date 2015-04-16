@@ -3,18 +3,29 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Khmelnytskyi Events{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            {% stylesheets 'css/*' filter='cssrewrite' %}
+                <link rel="stylesheet" href="{{ asset_url }}" >
+            {% endstylesheets %}
+        {% endblock stylesheets %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
 
         <hr />
 
+        {% endblock body %}
+
+        {% block javascripts %}
+            {% javascripts 'js/*'  %}
+                <script src="{{ asset_url }}"> </script>
+            {% endjavascripts %}
+        {% endblock javascripts %}
+
         <footer>
             {% block footer %}
-                <div>
+                <div class="custom-footer">
                     <div>
                         <p>
                             Developed by Svatku Team.
