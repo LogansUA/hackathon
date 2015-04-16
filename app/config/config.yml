@@ -4,6 +4,7 @@ imports:
     - { resource: services.yml }
     - { resource: assetic.yml }
     - { resource: doctrine.yml }
+    - { resource: @AppBundle/Resources/config/admin.yml }
 
 framework:
     #esi:             ~
@@ -39,3 +40,10 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+#SonataAdminBundle
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
