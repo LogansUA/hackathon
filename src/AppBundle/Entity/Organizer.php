@@ -41,21 +41,21 @@ class Organizer
     /**
      * @var string $phone Phone
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $phone;
 
     /**
      * @var string $email Email
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $email;
 
     /**
      * @var string $address Address
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $address;
 
