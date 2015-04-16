@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Class Event
  *
  * @ORM\Entity(repositoryClass="AppBundle\Repository\EventRepository")
- * @ORM\Table(name="event")
+ * @ORM\Table(name="events")
  */
 class Event
 {
@@ -59,7 +59,6 @@ class Event
      */
     private $longitude;
 
-
     /**
      * @var int $price Price
      *
@@ -72,7 +71,7 @@ class Event
      *
      * @ORM\Column(type="boolean")
      */
-    private $isFree = true;
+    private $free = true;
 
     /**
      * @var Collection|EventOrg[] $evorgs
@@ -285,27 +284,26 @@ class Event
     }
 
     /**
-     * Get isFree
+     * Get free
      *
-     * @return boolean IsFree
+     * @return boolean Free
      */
-    public function isIsFree()
+    public function isFree()
     {
-        return $this->isFree;
+        return $this->free;
     }
 
     /**
-     * Set isFree
+     * Set free
      *
-     * @param boolean $isFree isFree
+     * @param boolean $free free
      *
      * @return $this
      */
-    public function setIsFree($isFree)
+    public function setFree($free)
     {
-        $this->isFree = $isFree;
+        $this->free = $free;
 
         return $this;
     }
-
 }
