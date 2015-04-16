@@ -35,14 +35,12 @@ class EventController extends Controller
     {
         $event = new Event();
 
-        $form = $this->createForm(new EventType());
+        $form = $this->createForm('event', $event);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $eventData = $form->getData();
-
             $em = $this->getDoctrine()->getManager();
-            $em->persist($eventData);
+            $em->persist($event);
             $em->flush();
 
 //            $this->get('session')->getFlashBag()->add('notice', 'Your event was added!');
