@@ -22,12 +22,15 @@ class EventRepository extends EntityRepository
         $qb = $this->createQueryBuilder('e');
 
         $qb
+            ->select('e.name')
+            ->addSelect('e.datetime')
+            ->addSelect('e.price')
             ->setFirstResult($offset);
 
         if (null !== $limit) {
             $qb->setMaxResults($limit);
         }
 
-        return $qb->getQuery()->getArrayResult();
+        return $qb->getQuery()->getResult();
     }
 }
