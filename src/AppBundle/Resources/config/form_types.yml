@@ -1,0 +1,5 @@
+services:
+    app.form.type.event:
+        class: AppBundle\Form\Type\EventType
+        type:
+            - { name: form.type, alias: event }

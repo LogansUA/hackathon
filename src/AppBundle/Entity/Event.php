@@ -56,7 +56,6 @@ class Event
      */
     private $longitude;
 
-
     /**
      * @var int $price Price
      *
