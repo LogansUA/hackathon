@@ -43,5 +43,6 @@ class LoadEventData extends AbstractFixture
 
         $manager->persist($dvij);
 
+        $manager->flush();
     }
 }

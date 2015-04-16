@@ -25,5 +25,6 @@ class LoadOrganizerData extends AbstractFixture {
 
         $manager->persist($dance);
 
+        $manager->flush();
     }
 }
