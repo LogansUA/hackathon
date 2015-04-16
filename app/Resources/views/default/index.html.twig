@@ -1,5 +1,35 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    Homepage.
+<div class="khm-events">
+    <div class="div-for-image">
+    </div>
+    <p class="table-hea"><h3>Events of Khmelnytskyi city</h3></p>
+</div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Datetime</th>
+                <th>price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in event_list %}
+                <tr>
+                    <td><a href="http://khmelnytskyi-events.work/app_dev.php/event/{{ event.id }}/details">{{ event.name }}</a></td>
+                    <td>{{ event.datetime|date("d/m/Y H:m") }}</td>
+                    <td>
+                        {% if event.price is not empty %}
+                            {{ event.price }}
+                        {% else %}
+                            Free
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
+

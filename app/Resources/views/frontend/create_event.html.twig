@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h5 align="center">This is the Event create form.</h5>
+<div style="margin-left: 20%; margin-top: 5%; width: 50%">
+    <form class="form">
+        <h5>{{ form_start(form) }}</h5>
+        <h5>{{ form_row(form.name) }}</h5>
+        <h5>{{ form_row(form.description) }}</h5>
+        <h5 style="margin-bottom: 40px;">{{ form_row(form.datetime) }}</h5>
+        <h5>{{ form_row(form.latitude) }}</h5>
+        <h5>{{ form_row(form.longitude) }}</h5>
+        <h5>{{ form_row(form.price) }}</h5>
+        <h5>{{ form_end(form) }}</h5>
+    </form>
+</div>
+{% endblock %}
