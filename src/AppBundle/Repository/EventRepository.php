@@ -3,6 +3,7 @@
 namespace AppBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use AppBundle\Entity\Event;
 
 /**
  * EventRepository
@@ -32,5 +33,20 @@ class EventRepository extends EntityRepository
         }
 
         return $qb->getQuery()->getResult();
+    }
+
+    /**
+     * @param integer $id
+     *
+     * @return Event
+     */
+    public function findEventById($id)
+    {
+        $qb = $this->createQueryBuilder('e');
+        $qb
+            ->select('e')
+            ->where($qb->expr()->eq('e.id', ':id'))
+            ->setParameter('id', $id);
+        return $qb->getQuery()->getOneOrNullResult();
     }
 }

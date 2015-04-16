@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ul style="list-style: none; margin-left: 5%">
+        <li>
+            <h5>Назва</h5>
+            <p>{{ event.name }}</p>
+        </li>
+        <li>
+            <h5>Деталі</h5>
+            <p>{{ event.description }}</p>
+        </li>
+        <li>
+            <h5>Дата</h5>
+            <p> {{ event.datetime|date("d/m/Y H:m") }} </p>
+        </li>
+        <li>
+            <h5>Ціна</h5>
+            <p> {% if event.price is not empty %}
+                    {{ event.price }}
+                {% else %}
+                    Free
+                {% endif %} </p>
+        </li>
+        <li>
+            <h5>Організатор</h5>
+            <p><a href="">{{ organizer.orgName }}</a></p>
+        </li>
+    </ul>
+
+
+{% endblock %}
